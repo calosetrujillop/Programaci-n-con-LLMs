@@ -1,0 +1,11 @@
+El Problema: Estás trabajando en la predicción del costo de grandes proyectos de infraestructura. Estos valores suelen tener una distribución con una "cola larga" (pocos proyectos extremadamente caros y muchos de costo medio), lo que confunde a los modelos lineales tradicionales. Para solucionar esto, es técnicamente preferible entrenar el modelo sobre el logaritmo de los costos y luego revertir la transformación para las predicciones finales.
+Tu Misión: Escribe una función llamada entrenar_regresor_logaritmico(X, y) que realice lo siguiente utilizando sklearn:
+1.	Pipeline de Características: Cree un Pipeline que incluya un escalado estándar (StandardScaler) y un modelo de regresión Ridge con alpha=1.0.
+2.	Envoltorio de Objetivo: Utilice la clase TransformedTargetRegressor de sklearn.compose para envolver el pipeline anterior.
+3.	Funciones Matemáticas: Configure el envoltorio para que aplique la transformación np.log1p al vector objetivo y antes de entrenar, y la función inversa np.expm1 al realizar predicciones.
+4.	Evaluación: Evalúe el rendimiento del modelo completo utilizando validación cruzada (cross_val_score) con 5 pliegues y la métrica de R² (scoring='r2').
+5.	Retorno: La función debe devolver un diccionario con:
+o	modelo_compuesto: El objeto TransformedTargetRegressor ya entrenado con todos los datos.
+o	r2_promedio: El promedio de los scores obtenidos en la validación cruzada.
+o	n_caracteristicas: El número de columnas en la matriz X.
+Librerías permitidas: sklearn, numpy, pandas.
