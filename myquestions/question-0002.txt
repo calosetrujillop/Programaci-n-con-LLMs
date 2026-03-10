@@ -1,0 +1,7 @@
+El Problema: Estás analizando el consumo energético de varios edificios inteligentes. Los datos de los sensores de consumo suelen tener picos aislados (outliers) debido a fallos de lectura o eventos especiales, lo que afecta a los modelos de normalización tradicionales.
+Tu Misión: Escribe una función llamada analizar_eficiencia_energetica(df, target_col) que realice lo siguiente utilizando sklearn:
+1.	Limpieza: Identifique las columnas numéricas y rellene los valores faltantes utilizando la mediana (SimpleImputer).
+2.	Escalado Robusto: Aplique RobustScaler a las características para normalizar los datos, asegurando que los valores atípicos no distorsionen la escala.
+3.	Reducción de Dimensionalidad: Aplique PCA (Análisis de Componentes Principales) para reducir el set de datos a las 3 componentes más importantes.
+4.	Retorno: La función debe devolver la matriz de características transformada (numpy array) y el objeto PCA entrenado.
+Librerías permitidas: sklearn, pandas.
