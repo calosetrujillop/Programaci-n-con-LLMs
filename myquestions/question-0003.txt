@@ -1,0 +1,9 @@
+El Problema: En un estudio genómico, intentas predecir el nivel de una proteína basándote en la expresión de cientos de genes. Como hay más variables que muestras, necesitas un modelo que combine selección de variables y regularización.
+Tu Misión: Escribe una función llamada optimizar_modelo_bioinformatica(X, y) que realice lo siguiente:
+1.	Modelo: Configure un modelo ElasticNet (que combina penalizaciones L1 y L2).
+2.	Búsqueda de Hiperparámetros: Utilice GridSearchCV para probar los siguientes valores:
+o	alpha: [0.1, 1.0, 10.0]
+o	l1_ratio: [0.2, 0.5, 0.8]
+3.	Validación: Use una validación cruzada de 3 pliegues (cv=3).
+4.	Salida: La función debe devolver el mejor valor de R² obtenido y los mejores parámetros encontrados.
+Librerías permitidas: sklearn.
