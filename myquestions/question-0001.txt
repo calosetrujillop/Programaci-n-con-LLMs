@@ -1,0 +1,32 @@
+El Problema
+Una empresa de suscripción digital quiere entender el comportamiento de cancelación de sus clientes.
+Recibes un DataFrame de pandas donde cada fila representa una suscripción con la siguiente información:
+•	cliente_id
+•	fecha_inicio
+•	fecha_cancelacion (puede ser NaN si el cliente sigue activo)
+•	plan (Basic, Pro, Premium)
+•	precio_mensual
+El equipo de negocio quiere analizar la retención promedio por tipo de plan.
+Tu Misión
+Escribe una función llamada analizar_retencion_clientes(df) que realice los siguientes pasos:
+1.	Preparación de fechas (Pandas):
+•	Convertir fecha_inicio y fecha_cancelacion a tipo datetime.
+•	Si fecha_cancelacion es NaN, asumir que la suscripción sigue activa hasta la fecha actual (pd.Timestamp.today()).
+2.	Cálculo de duración:
+•	Crear una nueva columna llamada meses_activo que calcule la duración de la suscripción en meses.
+3.	Agrupación: Agrupar por plan y calcular:
+•	clientes_totales
+•	duracion_promedio_meses
+•	ingreso_promedio_mensual
+4.	Ordenar resultados:
+•	Ordenar el DataFrame final por duracion_promedio_meses de mayor a menor.
+Salida esperada
+La función debe devolver un DataFrame con las columnas:
+•	Plan
+•	clientes_totales
+•	duracion_promedio_meses
+•	ingreso_promedio_mensual
+Restricciones
+•	Usar pandas groupby y agg
+•	Evitar loops explícitos (for)
+•	Librerías permitidas: pandas, numpy
